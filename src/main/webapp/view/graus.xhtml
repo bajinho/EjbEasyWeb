@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Converter Graus - Stateless</title>
+</h:head>
+
+
+<h:body>
+    <ui:composition template="/templates/layout.xhtml">
+        <ui:define name="content">
+            <h:form>
+                <h:outputText value="Conversão de Graus Em Fahrenheit utilizando um bean Stateless"/>
+                <hr/>
+                <div class="input-field row s12">
+                    <h:inputText id="graus_value" value="#{grausMB.c}"></h:inputText>
+                    <label for="graus_value">Grau em Celsius: </label>
+                </div>
+                <h:commandButton class="waves-effect waves-light btn blue lighten-4"
+                                 action="#{grausMB.converterParaFahrenheit}" value="Converter"/><br/>
+                <br/>
+                <h:outputLabel value="Em Fahrenheit: "/>
+                <br/>
+                <h:outputText value="#{grausMB.resultadoF}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>
